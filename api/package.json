@@ -30,6 +30,8 @@
   },
   "dependencies": {
     "@prisma/client": "6.13.0",
+    "better-auth": "^1.3.4",
+    "envgaurd": "^1.2.1",
     "express": "^5.1.0"
   },
   "devDependencies": {
