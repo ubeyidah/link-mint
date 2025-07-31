@@ -1,7 +1,8 @@
+import Wrapper from "@/components/share/wrapper";
 import React from "react";
 
 const page = () => {
-  return <div>page</div>;
+  return <Wrapper>page</Wrapper>;
 };
 
 export default page;
