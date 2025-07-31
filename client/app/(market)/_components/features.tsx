@@ -43,8 +43,8 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="bg-[#00001917]">
-      <Wrapper className="relative py-16 text-center">
+    <section className="bg-[#00001917]" id="features">
+      <Wrapper className="relative pb-18 text-center">
         <h2 className="text-3xl font-medium font-sans mb-3">Features</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto mb-12">
           Designed for simplicity and power. everything you need to manage your

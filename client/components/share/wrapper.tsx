@@ -4,14 +4,19 @@ interface WrapperProps {
   className?: string;
   children: React.ReactNode;
   as?: keyof JSX.IntrinsicElements;
+  id?: string;
 }
 const Wrapper = ({
   className,
   children,
   as: Component = "div",
+  id,
 }: WrapperProps) => {
   return (
-    <Component className={clsx("max-w-6xl mx-auto px-3 md:px-5", className)}>
+    <Component
+      id={id}
+      className={clsx("max-w-6xl mx-auto px-3 md:px-5", className)}
+    >
       {children}
     </Component>
   );
