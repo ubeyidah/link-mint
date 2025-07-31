@@ -38,7 +38,7 @@
   --sidebar-ring: oklch(70.8% 0 0);
 }
 
-.dark {
+:root {
   --background: oklch(7.28% 0.011 114.4); /* secondary bg */
   --foreground: oklch(98.5% 0 0); /* white text */
   --card: oklch(20.5% 0 0);
