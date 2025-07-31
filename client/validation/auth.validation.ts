@@ -1,6 +1,6 @@
 import z from "zod";
 
-export const authSchema = z.object({
+export const signInSchema = z.object({
   email: z.string().email("Invalid email address"),
   password: z
     .string()
@@ -8,4 +8,4 @@ export const authSchema = z.object({
     .max(128, "Password must not exceed 128 characters"),
 });
 
-export type AuthSchema = z.infer<typeof authSchema>;
+export type SignInType = z.infer<typeof signInSchema>;
