@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import SignInForm from "../_components/sign-in-form";
+import SignUpForm from "../_components/sign-up-form";
 
 const page = () => {
   return (
@@ -17,11 +17,11 @@ const page = () => {
           Create your LinkMint account
         </CardTitle>
         <CardDescription className="text-center">
-          Start shortening smarter – get free coins when you join.
+          Start shortening smarter & get free coins when you join.
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <SignInForm />
+        <SignUpForm />
       </CardContent>
       <CardFooter className="block">
         <p className="text-center text-sm">
