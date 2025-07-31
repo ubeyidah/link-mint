@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { authClient } from "@/lib/auth-client";
 
 const SignUpForm = () => {
   const form = useForm<SignUpType>({
@@ -25,9 +26,29 @@ const SignUpForm = () => {
       name: "",
     },
   });
-  const onSubmit = (data: SignUpType) => {
-    console.log("Form submitted with data:", data);
-    // Handle sign-in logic here
+  const onSubmit = async ({ email, name, password }: SignUpType) => {
+    const { data, error } = await authClient.signUp.email(
+      {
+        email,
+        password,
+        name,
+        callbackURL: "/dashboard",
+      },
+      {
+        onRequest: (ctx) => {
+          //show loading
+        },
+        onSuccess: (ctx) => {
+          //redirect to the dashboard or sign in page
+        },
+        onError: (ctx) => {
+          // display the error message
+          alert(ctx.error.message);
+        },
+      }
+    );
+
+    console.log("Sign Up Response:", data, error);
   };
   return (
     <Form {...form}>

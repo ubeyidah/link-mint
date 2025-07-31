@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ubeyidah", url: "https://github.com/ubeyidah" }],
   creator: "Ubeyidah",
-  themeColor: "#695BF8",
   openGraph: {
     title: "LinkMint – URL Shortener with Coin System",
     description:
