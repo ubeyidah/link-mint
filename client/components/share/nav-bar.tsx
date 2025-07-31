@@ -2,7 +2,7 @@ import React from "react";
 import Wrapper from "./wrapper";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 export const navItems = [
   { name: "Home", href: "/" },
   { name: "features", href: "/#features" },
@@ -31,7 +31,12 @@ const Navbar = () => {
         </nav>
 
         <div>
-          <Button> Sign In</Button>
+          <Link
+            href="/sign-in"
+            className={buttonVariants({ variant: "default" })}
+          >
+            Sign In
+          </Link>
         </div>
       </Wrapper>
     </header>
