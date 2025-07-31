@@ -29,12 +29,15 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@prisma/client": "6.13.0",
     "express": "^5.1.0"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.2",
     "@types/express": "^5.0.3",
     "@types/node": "^24.1.0",
+    "init": "^0.1.2",
+    "prisma": "^6.13.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
