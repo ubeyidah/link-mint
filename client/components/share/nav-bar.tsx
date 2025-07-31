@@ -3,13 +3,12 @@ import Wrapper from "./wrapper";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
-
+export const navItems = [
+  { name: "Home", href: "/" },
+  { name: "features", href: "/#features" },
+  { name: "Pricing", href: "/#pricing" },
+];
 const Navbar = () => {
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "features", href: "/#features" },
-    { name: "Pricing", href: "/#pricing" },
-  ];
   return (
     <header className="bg-transparent backdrop-blur-2xl fixed left-0 right-0 top-0 z-50">
       <Wrapper className="flex items-center justify-between py-4">
