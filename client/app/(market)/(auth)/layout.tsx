@@ -14,6 +14,19 @@ const layout = ({ children }: RootLayoutProps) => {
         <Image src="/logo.svg" alt="linkMint logo" width={48} height={48} />
       </Link>
       {children}
+      <p className="text-xs text-center text-secondary-foreground mt-2">
+        By clicking contnue. You agree to our <br />{" "}
+        <Link href="/terms" className="hover:text-foreground hover:underline">
+          {" "}
+          Terms of Service
+        </Link>{" "}
+        and
+        <Link href="/privecy" className="hover:text-foreground hover:underline">
+          {" "}
+          Privecy Policy
+        </Link>
+        .
+      </p>
     </main>
   );
 };

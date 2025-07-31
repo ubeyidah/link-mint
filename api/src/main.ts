@@ -6,7 +6,7 @@ import cors from "cors";
 const app = express();
 app.use(
   cors({
-    origin: [env("BETTER_AUTH_URL") as string],
+    origin: [env("FRONTED_URL") as string],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

@@ -1,9 +1,30 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
-const GoogleButton = () => {
+const GoogleButton = ({ isPending = false }: { isPending?: boolean }) => {
+  const router = useRouter();
+  const signIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/dashboard");
+        },
+      },
+    });
+  };
   return (
-    <Button variant={"secondary"} size={"lg"} className="w-full rounded-full">
+    <Button
+      variant={"secondary"}
+      size={"lg"}
+      type="button"
+      className="w-full rounded-full"
+      onClick={signIn}
+      disabled={isPending}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
