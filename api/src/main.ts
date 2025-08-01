@@ -1,8 +1,10 @@
 import express from "express";
 import { env } from "envgaurd";
+import cors from "cors";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth";
-import cors from "cors";
+import urlRoutes from "./rotues/url.routes";
+
 const app = express();
 
 app.use(
@@ -15,6 +17,8 @@ app.use(
 // routes
 app.all("/api/auth/*splat", toNodeHandler(auth));
 app.use(express.json());
+
+app.use("/api/urls", urlRoutes);
 
 const port = env("PORT", 4000);
 app.listen(port, () => {
