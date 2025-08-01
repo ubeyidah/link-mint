@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 interface iAppProps {
   email: string;
   name: string;
@@ -31,7 +32,7 @@ const UserProfile = ({ email, name, image }: iAppProps) => {
   };
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger>
         <Avatar className="h-8 w-8 !bg-white">
           <AvatarImage src={image || "/avatar.png"} alt="Profile image" />
           <AvatarFallback>{name[0].toUpperCase()}</AvatarFallback>
@@ -48,22 +49,28 @@ const UserProfile = ({ email, name, image }: iAppProps) => {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Home size={16} className="opacity-60" aria-hidden="true" />
-            <span>Home</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <LayoutDashboard
-              size={16}
-              className="opacity-60"
-              aria-hidden="true"
-            />
-            <span>Dashboard</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <User size={16} className="opacity-60" aria-hidden="true" />
-            <span>Profile</span>
-          </DropdownMenuItem>
+          <Link href={"/"}>
+            <DropdownMenuItem>
+              <Home size={16} className="opacity-60" aria-hidden="true" />
+              <span>Home</span>
+            </DropdownMenuItem>
+          </Link>
+          <Link href={"/dashboard"}>
+            <DropdownMenuItem>
+              <LayoutDashboard
+                size={16}
+                className="opacity-60"
+                aria-hidden="true"
+              />
+              <span>Dashboard</span>
+            </DropdownMenuItem>
+          </Link>
+          <Link href={"/profile"}>
+            <DropdownMenuItem>
+              <User size={16} className="opacity-60" aria-hidden="true" />
+              <span>Profile</span>
+            </DropdownMenuItem>
+          </Link>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleSignout}>
