@@ -7,7 +7,11 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // ✅ If user is trying to access a protected route (like /dashboard)
-  const protectedRoutes = ["/dashboard", "/profile"];
+  const protectedRoutes = [
+    "/dashboard",
+    "/dashboard/settings",
+    "/dashboard/plan",
+  ];
   const isProtected = protectedRoutes.some((route) =>
     pathname.startsWith(route)
   );
