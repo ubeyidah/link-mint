@@ -12,12 +12,12 @@ const navItems = [
   { name: "settings", href: "/dashboard/settings" },
   { name: "Plan", href: "/dashboard/plan" },
 ];
+
 const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
   const pathname = usePathname();
-  console.log(pathname);
   return (
-    <header className="border-b py-3">
+    <header className="border-b py-3 sticky top-0 bg-background/20 backdrop-blur-2xl">
       <Wrapper className="flex items-center justify-between">
         <div className="flex gap-3 items-center">
           <Link href="/" className="flex items-end" aria-label="Go to homepage">

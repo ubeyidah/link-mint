@@ -4,13 +4,19 @@ import prisma from "../lib/db";
 import { ExpressRequest } from "../types/express";
 export const createShortUrl = async (req: ExpressRequest, res: Response) => {
   const { success, data, error } = urlSchema.safeParse(req.body);
+  const userId = req.userId;
+  if (!userId) {
+    return res
+      .status(401)
+      .json({ message: "Unauthorized", success: false, data: null });
+  }
   if (!success) {
     return res
       .status(400)
       .json({ message: error.issues[0].message, success: false, data: null });
   }
   const user = await prisma.user.findUnique({
-    where: { id: req.userId },
+    where: { id: userId },
     select: { id: true, coins: true },
   });
   if (!user) {
@@ -30,11 +36,11 @@ export const createShortUrl = async (req: ExpressRequest, res: Response) => {
   const shortUrl = await prisma.urls.create({
     data: {
       ...data,
-      userId: req.userId as string,
+      userId: userId,
     },
   });
   await prisma.user.update({
-    where: { id: req.userId },
+    where: { id: userId },
     data: { coins: user.coins - 1 },
   });
   return res.status(201).json({

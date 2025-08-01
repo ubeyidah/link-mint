@@ -1,7 +1,13 @@
 import React from "react";
+import UrlShortForm from "./_components/ulr-short-form";
 
 const page = () => {
-  return <div>page</div>;
+  return (
+    <div className="min-h-screen">
+      page
+      <UrlShortForm />
+    </div>
+  );
 };
 
 export default page;
