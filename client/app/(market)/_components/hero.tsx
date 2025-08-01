@@ -1,9 +1,13 @@
+"use client";
 import Wrapper from "@/components/share/wrapper";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
+  const { data: session } = authClient.useSession();
   return (
     <div className="min-h-screen w-full relative">
       <div
@@ -28,10 +32,18 @@ const Hero = () => {
           built for simplicity, speed, and control.
         </h4>
         <div className="flex gap-5">
-          <Button size="lg">Get Started</Button>
-          <Button variant="outline" size="lg">
+          <Link
+            href={session ? "/dashboard" : "/sign-in"}
+            className={buttonVariants()}
+          >
+            {session ? "Dashboard" : "Get Started"}
+          </Link>
+          <Link
+            href={"/#pricing"}
+            className={buttonVariants({ variant: "outline" })}
+          >
             See Pricing
-          </Button>
+          </Link>
         </div>
       </Wrapper>
     </div>
