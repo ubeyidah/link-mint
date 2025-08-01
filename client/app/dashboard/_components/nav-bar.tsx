@@ -26,17 +26,15 @@ const Navbar = () => {
           <nav>
             <ul className="flex items-center justify-center gap-3">
               {navItems.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className={clsx({
-                      "hover:bg-primary/25 px-3 rounded-md transition-colors duration-200 py-1":
-                        true,
-                      "bg-primary/25": pathname === item.href,
-                    })}
-                  >
-                    {item.name}
-                  </Link>
+                <li
+                  key={item.name}
+                  className={clsx({
+                    "hover:bg-primary/25 px-3 rounded-md transition-colors duration-200 py-1":
+                      true,
+                    "bg-primary/25": pathname === item.href,
+                  })}
+                >
+                  <Link href={item.href}>{item.name}</Link>
                 </li>
               ))}
             </ul>
