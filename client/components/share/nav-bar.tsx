@@ -1,14 +1,18 @@
+"use client";
 import React from "react";
 import Wrapper from "./wrapper";
 import Link from "next/link";
 import Image from "next/image";
-import { Button, buttonVariants } from "../ui/button";
-export const navItems = [
+import { buttonVariants } from "../ui/button";
+import UserProfile from "./user-profile";
+import { authClient } from "@/lib/auth-client";
+const navItems = [
   { name: "Home", href: "/" },
   { name: "features", href: "/#features" },
   { name: "Pricing", href: "/#pricing" },
 ];
 const Navbar = () => {
+  const { data: session, isPending } = authClient.useSession();
   return (
     <header className="bg-transparent backdrop-blur-2xl fixed left-0 right-0 top-0 z-50">
       <Wrapper className="flex items-center justify-between py-4">
@@ -31,12 +35,20 @@ const Navbar = () => {
         </nav>
 
         <div>
-          <Link
-            href="/sign-in"
-            className={buttonVariants({ variant: "default" })}
-          >
-            Sign In
-          </Link>
+          {session ? (
+            <UserProfile
+              email={session.user.email}
+              name={session.user.name}
+              image={session.user.image || ""}
+            />
+          ) : (
+            <Link
+              href="/sign-in"
+              className={buttonVariants({ variant: "default" })}
+            >
+              Sign In
+            </Link>
+          )}
         </div>
       </Wrapper>
     </header>

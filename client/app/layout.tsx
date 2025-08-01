@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ubeyidah", url: "https://github.com/ubeyidah" }],
   creator: "Ubeyidah",
-  themeColor: "#695BF8",
   openGraph: {
     title: "LinkMint – URL Shortener with Coin System",
     description:
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${roboto.variable} ${dmSans.variable} antialiased`}>
         {children}
       </body>

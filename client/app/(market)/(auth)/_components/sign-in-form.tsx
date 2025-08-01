@@ -1,6 +1,6 @@
 "use client";
 import { Separator } from "@/components/ui/separator";
-import React from "react";
+import React, { useState, useTransition } from "react";
 import GoogleButton from "./google-btn";
 import { useForm } from "react-hook-form";
 import { signInSchema, SignInType } from "@/validation/auth.validation";
@@ -15,8 +15,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
+import { Loader, XIcon } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const SignInForm = () => {
+  const router = useRouter();
+  const [error, setError] = useState("");
+  const [isPending, startTransition] = useTransition();
   const form = useForm<SignInType>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -24,9 +31,28 @@ const SignInForm = () => {
       password: "",
     },
   });
-  const onSubmit = (data: SignInType) => {
-    console.log("Form submitted with data:", data);
-    // Handle sign-in logic here
+  const onSubmit = ({ email, password }: SignInType) => {
+    startTransition(async () => {
+      await authClient.signIn.email(
+        {
+          email,
+          password,
+        },
+        {
+          onRequest: () => {
+            setError("");
+          },
+          onSuccess: () => {
+            setError("");
+            form.reset();
+            router.push("/dashboard");
+          },
+          onError: (ctx) => {
+            setError(ctx.error.message);
+          },
+        }
+      );
+    });
   };
   return (
     <Form {...form}>
@@ -66,7 +92,15 @@ const SignInForm = () => {
               </FormItem>
             )}
           />
-          <Button className="w-full">Sign In</Button>
+          {error && (
+            <Alert variant="soft">
+              <XIcon />
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+          <Button className="w-full" type="submit" disabled={isPending}>
+            {isPending ? <Loader className="animate-spin" /> : "Sign In"}
+          </Button>
         </div>
         <div className="py-4">
           <div className="relative w-full block mb-6">
