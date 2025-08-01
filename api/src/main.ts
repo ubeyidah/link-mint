@@ -4,6 +4,7 @@ import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth";
 import cors from "cors";
 const app = express();
+
 app.use(
   cors({
     origin: [env("FRONTED_URL") as string],

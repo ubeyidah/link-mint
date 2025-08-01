@@ -33,7 +33,8 @@
     "better-auth": "^1.3.4",
     "cors": "^2.8.5",
     "envgaurd": "^1.2.1",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.2",
