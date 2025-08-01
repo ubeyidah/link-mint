@@ -1,9 +1,12 @@
-import { navItems } from "@/components/share/nav-bar";
 import Wrapper from "@/components/share/wrapper";
 import { Github } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "features", href: "/#features" },
+  { name: "Pricing", href: "/#pricing" },
+];
 const Footer = () => {
   return (
     <Wrapper
