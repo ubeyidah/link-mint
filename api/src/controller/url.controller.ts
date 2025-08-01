@@ -2,6 +2,7 @@ import { Response } from "express";
 import { urlSchema } from "../validation/url.validation";
 import prisma from "../lib/db";
 import { ExpressRequest } from "../types/express";
+
 export const createShortUrl = async (req: ExpressRequest, res: Response) => {
   const { success, data, error } = urlSchema.safeParse(req.body);
   const userId = req.userId;
@@ -47,5 +48,29 @@ export const createShortUrl = async (req: ExpressRequest, res: Response) => {
     message: "Short URL created successfully",
     success: true,
     data: shortUrl,
+  });
+};
+export const getCoin = async (req: ExpressRequest, res: Response) => {
+  const userId = req.userId;
+  if (!userId) {
+    return res
+      .status(401)
+      .json({ message: "Unauthorized", success: false, data: null });
+  }
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { coins: true },
+  });
+  if (!user) {
+    return res.status(404).json({
+      message: "User not found",
+      success: false,
+      data: null,
+    });
+  }
+  return res.status(200).json({
+    message: "Coins retrieved successfully",
+    success: true,
+    data: { coins: user.coins },
   });
 };
