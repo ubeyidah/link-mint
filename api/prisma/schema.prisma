@@ -16,10 +16,13 @@ model User {
   email         String
   emailVerified Boolean
   image         String?
+
+  coins         Int        @default(5)
   createdAt     DateTime
   updatedAt     DateTime
   sessions      Session[]
   accounts      Account[]
+  urls         urls[]
 
   @@unique([email])
   @@map("user")
@@ -68,4 +71,22 @@ model Verification {
   updatedAt  DateTime?
 
   @@map("verification")
+}
+
+
+model urls {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id] )
+  orginalUrl String
+  shortCode String @unique
+  clickCount Int @default(0)
+  expiresAt DateTime?
+  isActive Boolean @default(true)
+  title String?
+  customSlug String?
+  description String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
