@@ -1,19 +1,12 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 const GoogleButton = ({ isPending = false }: { isPending?: boolean }) => {
-  const router = useRouter();
   const signIn = async () => {
     await authClient.signIn.social({
       provider: "google",
-      fetchOptions: {
-        onSuccess: () => {
-          router.push("/dashboard");
-        },
-      },
     });
   };
   return (

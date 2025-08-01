@@ -16,7 +16,7 @@ app.use(
 app.all("/api/auth/*splat", toNodeHandler(auth));
 app.use(express.json());
 
-const port = env("PORT", 8080);
+const port = env("PORT", 4000);
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
