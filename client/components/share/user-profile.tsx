@@ -49,12 +49,6 @@ const UserProfile = ({ email, name, image }: iAppProps) => {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <Link href={"/"}>
-            <DropdownMenuItem>
-              <Home size={16} className="opacity-60" aria-hidden="true" />
-              <span>Home</span>
-            </DropdownMenuItem>
-          </Link>
           <Link href={"/dashboard"}>
             <DropdownMenuItem>
               <LayoutDashboard
@@ -65,10 +59,17 @@ const UserProfile = ({ email, name, image }: iAppProps) => {
               <span>Dashboard</span>
             </DropdownMenuItem>
           </Link>
+          <Link href={"/"}>
+            <DropdownMenuItem>
+              <Home size={16} className="opacity-60" aria-hidden="true" />
+              <span>Home</span>
+            </DropdownMenuItem>
+          </Link>
+
           <Link href={"/profile"}>
             <DropdownMenuItem>
               <User size={16} className="opacity-60" aria-hidden="true" />
-              <span>Profile</span>
+              <span>Settings</span>
             </DropdownMenuItem>
           </Link>
         </DropdownMenuGroup>
