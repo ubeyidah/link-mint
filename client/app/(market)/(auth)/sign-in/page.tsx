@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import SignInForm from "../_components/sign-in-form";
 
-const page = () => {
+const page = async () => {
   return (
     <Card className="w-full max-w-lg px-3">
       <CardHeader>
