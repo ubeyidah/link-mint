@@ -3,11 +3,13 @@ import Wrapper from "@/components/share/wrapper";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { authClient } from "@/lib/auth-client";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
   const { data: session } = authClient.useSession();
+  const t = useTranslations("homePage");
   return (
     <div className="min-h-screen w-full relative">
       <div
@@ -24,13 +26,11 @@ const Hero = () => {
       >
         <Badge className="-rotate-6"> LinkMint - URL Shortener</Badge>
         <h1 className="text-5xl leading-tight mt-5 mb-4 max-w-2xl">
-          Your Modern Solution for <span className="text-primary">Smarter</span>
-          , <span className="text-primary">Faster</span> Link Sharing
+          {/* Your Modern Solution for <span className="text-primary">Smarter</span>
+          , <span className="text-primary">Faster</span> Link Sharing */}
+          {t("title")}
         </h1>
-        <h4 className="text-muted-foreground mb-8 max-w-2xl">
-          Create short, powerful links in seconds. Manage, track, and grow;
-          built for simplicity, speed, and control.
-        </h4>
+        <h4 className="text-muted-foreground mb-8 max-w-2xl">{t("content")}</h4>
         <div className="flex gap-5">
           <Link
             href={session ? "/dashboard" : "/sign-in"}

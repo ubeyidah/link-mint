@@ -1,9 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
+import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
+
+const intlMiddleware = createMiddleware(routing);
 
 export async function middleware(request: NextRequest) {
-  const sessionCookie = getSessionCookie(request);
+  const intlResponse = intlMiddleware(request);
+  if (intlResponse) {
+    return intlResponse;
+  }
 
+  const sessionCookie = getSessionCookie(request);
   const { pathname } = request.nextUrl;
 
   // ✅ If user is trying to access a protected route (like /dashboard)
@@ -36,11 +44,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Apply middleware to all relevant pages
-    "/dashboard",
-    "/settings",
-    "/account",
-    "/sign-in",
-    "/sign-up",
+    // i18n matcher: all except api, trpc, _next, _vercel, and files with dot
+    "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
   ],
 };
