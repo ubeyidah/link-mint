@@ -52,7 +52,6 @@ export const createShortUrl = async (req: ExpressRequest, res: Response) => {
 };
 export const getCoin = async (req: ExpressRequest, res: Response) => {
   const userId = req.userId;
-  console.log("User ID:", userId);
 
   if (!userId) {
     return res

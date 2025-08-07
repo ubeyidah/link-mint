@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { dmSans, roboto } from "./fonts";
 import { RootLayoutProps } from "@/types";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "LinkMint – Modern URL Shortener with Credits",
@@ -26,12 +29,18 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-export default function RootLayout({ children }: RootLayoutProps) {
+interface iAppProps extends RootLayoutProps {
+  params: Promise<{ locale: string }>;
+}
+export default async function RootLayout({ children, params }: iAppProps) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang={locale} data-scroll-behavior="smooth">
       <body className={`${roboto.variable} ${dmSans.variable} antialiased`}>
-        {children}
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );
