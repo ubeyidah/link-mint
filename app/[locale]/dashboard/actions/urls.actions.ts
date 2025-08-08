@@ -1,18 +1,12 @@
 "use server";
 
-import { redirect } from "next/navigation";
-import { auth } from "@/lib/auth";
 import { urlSchema, UrlSchemaType } from "@/validation/url.validation";
-import { headers } from "next/headers";
 import prisma from "@/lib/prisma";
+import { requireAuth } from "@/lib/user.action";
+import { revalidateTag } from "next/cache";
 
 export const createNewUrlShort = async (urlsData: UrlSchemaType) => {
-  const user = await auth.api.getSession({
-    headers: await headers(),
-  });
-  if (!user?.session) {
-    return redirect("/sign-in");
-  }
+  const user = await requireAuth();
   const { success, data, error } = urlSchema.safeParse(urlsData);
   if (!success) {
     return { message: error.issues[0].message, success: false, data: null };
@@ -43,6 +37,7 @@ export const createNewUrlShort = async (urlsData: UrlSchemaType) => {
     where: { id: user.session.userId },
     data: { coins: userRecord.coins - 1 },
   });
+  revalidateTag("coins");
   return {
     message: "Short URL created successfully",
     success: true,
