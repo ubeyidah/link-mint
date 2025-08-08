@@ -16,6 +16,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { AudioLines, Link, Loader, XIcon } from "lucide-react";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { createNewUrlShort } from "../actions/urls.actions";
 
 const UrlShortForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,24 +36,11 @@ const UrlShortForm = () => {
   const onSubmit = async (data: UrlSchemaType) => {
     try {
       setIsLoading(true);
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BETTER_AUTH_URL}/api/urls`,
-        {
-          method: "POST",
-          body: JSON.stringify(data),
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const resData = await res.json();
-
-      if (!res.ok) {
-        setError(resData.message || "Something went wrong");
+      const res = await createNewUrlShort(data);
+      if (!res.success) {
+        setError(res.message || "Something went wrong");
         return;
       }
-      console.log("URL created successfully:", resData);
       form.reset();
       setError("");
     } catch (error) {
