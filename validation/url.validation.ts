@@ -12,3 +12,5 @@ export const urlSchema = z.object({
   description: z.string().optional(),
   isActive: z.boolean().default(true),
 });
+
+export type UrlSchemaType = z.infer<typeof urlSchema>;
