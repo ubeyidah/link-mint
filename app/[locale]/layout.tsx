@@ -41,8 +41,8 @@ export default async function RootLayout({ children, params }: iAppProps) {
   return (
     <html lang={locale} data-scroll-behavior="smooth">
       <body className={`${roboto.variable} ${dmSans.variable} antialiased`}>
-        <SpeedInsights />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
