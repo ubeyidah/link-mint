@@ -5,6 +5,7 @@ import { RootLayoutProps } from "@/types";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "LinkMint – Modern URL Shortener with Credits",
@@ -40,6 +41,7 @@ export default async function RootLayout({ children, params }: iAppProps) {
   return (
     <html lang={locale} data-scroll-behavior="smooth">
       <body className={`${roboto.variable} ${dmSans.variable} antialiased`}>
+        <SpeedInsights />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
