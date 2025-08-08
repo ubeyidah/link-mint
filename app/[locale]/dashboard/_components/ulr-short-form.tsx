@@ -37,8 +37,8 @@ const UrlShortForm = () => {
     try {
       setIsLoading(true);
       const res = await createNewUrlShort(data);
-      if (!res.success) {
-        setError(res.message || "Something went wrong");
+      if (!res || !res.success) {
+        setError(res?.message || "Something went wrong");
         return;
       }
       form.reset();

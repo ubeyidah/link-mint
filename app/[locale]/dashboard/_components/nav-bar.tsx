@@ -14,7 +14,7 @@ const navItems = [
 ];
 
 const Navbar = () => {
-  const { data: session, isPending } = authClient.useSession();
+  const { data: session } = authClient.useSession();
   const pathname = usePathname();
   return (
     <header className="border-b py-3 sticky top-0 bg-background/20 backdrop-blur-2xl">
