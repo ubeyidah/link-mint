@@ -12,7 +12,7 @@ const navItems = [
   { name: "Pricing", href: "/#pricing" },
 ];
 const Navbar = () => {
-  const { data: session, isPending } = authClient.useSession();
+  const { data: session } = authClient.useSession();
   return (
     <header className="bg-transparent backdrop-blur-2xl fixed left-0 right-0 top-0 z-50">
       <Wrapper className="flex items-center justify-between py-4">

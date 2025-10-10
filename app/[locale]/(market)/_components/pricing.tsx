@@ -15,10 +15,6 @@ interface PricingPlan {
   popular?: boolean;
 }
 
-interface PricingProps {
-  plans?: PricingPlan[];
-}
-
 const defaultPlans: PricingPlan[] = [
   {
     name: "Free",

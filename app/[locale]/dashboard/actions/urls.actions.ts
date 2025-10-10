@@ -47,7 +47,10 @@ export const createNewUrlShort = async (urlsData: UrlSchemaType) => {
     };
   } catch (error) {
     return {
-      message: "Something went wrong. please try again later",
+      message:
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. please try again later",
       success: false,
       data: null,
     };

@@ -9,6 +9,7 @@ node_modules
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
+.qodo
 !.yarn/versions
 
 # testing

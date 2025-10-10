@@ -1,12 +1,5 @@
 import Wrapper from "@/components/share/wrapper";
-import {
-  Clock,
-  Globe,
-  Zap,
-  Gift,
-  DollarSign,
-  LayoutDashboard,
-} from "lucide-react";
+import { Clock, Globe, Zap, Gift, LayoutDashboard } from "lucide-react";
 
 const features = [
   {
