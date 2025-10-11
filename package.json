@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "db:migrate": "prisma migrate dev --skip-generate",
+    "db:generate": "prisma generate",
+    "db:deploy": "prisma generate deploy",
+    "db:studio": "prisma studio",
+    "db:reset": "prisma migrate reset"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
