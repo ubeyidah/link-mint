@@ -20,7 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: "pnpm"
+
+      - name: install pnpm
+        run: npm install -g pnpm
 
       - name: install deps
         run: pnpm install --frozen-lockfile
