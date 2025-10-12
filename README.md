@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="public/logo.png" width="80" alt="LinkMint Logo">
+</p>
+
+<h1 align="center">LinkMint 🚀</h1>
+<p align="center">
+Modern URL Shortener with a coin-based system and dashboard.
+</p>
+
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Getting Started](#getting-started)
+5. [Scripts](#scripts)
+6. [Deployment](#deployment)
+7. [Contributing](#contributing)
+8. [License](#license)
+
+---
+
+## Overview
+
+LinkMint is a modern, multilingual URL shortener designed to be simple, fast, and functional. Users can:
+
+- Shorten URLs quickly.
+- Track clicks and usage via a dashboard.
+- Earn and spend coins for premium features.
+- Manage links, favorites, and history.
+
+This project is built with **Next.js, TypeScript, Tailwind CSS, Prisma**, making it fully scalable and production-ready.
+
+---
+
+## Features
+
+- ✅ User Authentication (Better Auth, Google, Email)
+- ✅ Multilingual support: English, Amharic
+- ✅ Dashboard with link management and stats
+- ✅ Coins-based system for premium actions
+- ✅ Payment integration via Chapa
+- ✅ AI-enhanced features (planned)
+
+---
+
+## Tech Stack
+
+| Frontend             | Backend | Database                | Other Tools                                                   |
+| -------------------- | ------- | ----------------------- | ------------------------------------------------------------- |
+| Next.js + TypeScript | Nextjs  | PostgreSQL (Prisma ORM) | pnpm, Tailwind CSS, shadcn/ui, Better Auth, Resend, Chapa API |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/ubeyidah/link-mint.git
+cd link-mint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Setup environment variables
 
-## Learn More
+Create a `.env` file in the root:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+BETTER_AUTH_SECRET=
+BETTER_AUTH_URL=http://localhost:3000 #Base URL of your app
+DATABASE_URL="postgresql://postgres:password@localhost:5432/link-mint"
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Run locally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm dev
+```
 
-## Deploy on Vercel
+The app should now be running at `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Scripts
+
+| Command            | Description                  |
+| ------------------ | ---------------------------- |
+| `pnpm dev`         | Start dev server             |
+| `pnpm build`       | Build project for production |
+| `pnpm start`       | Start production server      |
+| `pnpm lint`        | Run ESLint                   |
+| `pnpm db:generate` | Generate Prisma client       |
+| `pnpm db:migrate`  | Run database migrations      |
+
+---
+
+## Deployment
+
+- Recommended hosting: **Vercel**
+- GitHub CI/CD automatically checks linting, TypeScript types, and builds before deployment.
+
+---
+
+## Contributing
+
+Contributions are welcome!
+
+1. Fork the repo
+2. Create a branch (`git checkout -b feature/my-feature`)
+3. Commit changes (`git commit -m "Add feature"`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
+
+---
+
+## License
+
+MIT License © 2025 [Ubeyidah Oumer](https://github.com/ubeyidah)
