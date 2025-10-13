@@ -7,20 +7,6 @@
 Modern URL Shortener with a coin-based system and dashboard.
 </p>
 
----
-
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Tech Stack](#tech-stack)
-4. [Getting Started](#getting-started)
-5. [Scripts](#scripts)
-6. [Deployment](#deployment)
-7. [Contributing](#contributing)
-8. [License](#license)
-
----
 
 ## Overview
 
