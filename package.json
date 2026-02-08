@@ -1,5 +1,5 @@
 {
-  "name": "linkMint",
+  "name": "link-mint",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,8 @@
     "db:generate": "prisma generate",
     "db:deploy": "prisma generate deploy",
     "db:studio": "prisma studio",
-    "db:reset": "prisma migrate reset"
+    "db:reset": "prisma migrate reset",
+    "db:push": "prisma db push"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",

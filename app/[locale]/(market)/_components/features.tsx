@@ -12,10 +12,15 @@ import {
 
 const Features = () => {
   return (
-    <section className="bg-[#00001917]" id="features">
-      <Wrapper className="relative py-20 text-center">
-        <h2 className="text-3xl font-medium font-sans mb-3">Features</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto mb-14">
+    <section id="features">
+      <Wrapper className="relative py-24 md:py-32 text-center">
+        <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
+          Features
+        </p>
+        <h2 className="font-sans text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+          Everything you need
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg mb-16">
           Designed for simplicity and power. Everything you need to manage your
           links smarter.
         </p>
@@ -29,7 +34,7 @@ const Features = () => {
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
                 <Gift className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold">Free to Start</h3>
+              <h3 className="mb-2 text-xl font-bold tracking-tight">Free to Start</h3>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
                 Get started with free coins — no credit card required. Pay only
                 when you need more credits to keep shortening.
@@ -54,7 +59,7 @@ const Features = () => {
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
                 <LayoutDashboard className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold">
+              <h3 className="mb-2 text-xl font-bold tracking-tight">
                 Dashboard Overview
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -83,7 +88,7 @@ const Features = () => {
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
                 <Clock className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Link Expiry</h3>
+              <h3 className="mb-2 text-lg font-bold tracking-tight">Link Expiry</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Set expiration dates for your links to control access over time.
               </p>
@@ -102,7 +107,7 @@ const Features = () => {
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
                 <Zap className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">
+              <h3 className="mb-2 text-lg font-bold tracking-tight">
                 Quick Link Creation
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -128,7 +133,7 @@ const Features = () => {
                 <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
                   <Globe className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="mb-2 text-xl font-semibold">
+                <h3 className="mb-2 text-xl font-bold tracking-tight">
                   Multilingual Support
                 </h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
@@ -156,7 +161,7 @@ const Features = () => {
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
                 <BarChart3 className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Easy & Modern UI</h3>
+              <h3 className="mb-2 text-lg font-bold tracking-tight">Easy & Modern UI</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Enjoy a sleek, responsive, and intuitive interface on all
                 devices.

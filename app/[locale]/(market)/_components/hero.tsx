@@ -42,23 +42,23 @@ const Hero = () => {
         className="flex h-screen flex-col items-center justify-center text-center"
       >
         {/* Pill badge */}
-        <Badge className="mb-6 gap-1.5 rounded-full border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary backdrop-blur-sm">
+        <Badge className="mb-8 gap-1.5 rounded-full border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary backdrop-blur-sm">
           <Sparkles className="h-3.5 w-3.5" />
           LinkMint — URL Shortener
         </Badge>
 
         {/* Heading */}
-        <h1 className="max-w-3xl text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl md:text-6xl">
+        <h1 className="max-w-3xl font-sans text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
           {t("title")}
         </h1>
 
         {/* Subheading */}
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl">
           {t("content")}
         </p>
 
         {/* CTA buttons */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <Link
             href={session ? "/dashboard" : "/sign-in"}
             className={buttonVariants({
@@ -82,7 +82,7 @@ const Hero = () => {
         </div>
 
         {/* Floating mini-graphic: mock link shortener bar */}
-        <div className="mt-16 w-full max-w-lg">
+        <div className="mt-20 w-full max-w-lg">
           <div className="rounded-2xl border border-border/40 bg-card/60 p-1 shadow-2xl shadow-primary/5 backdrop-blur-xl">
             <div className="flex items-center gap-3 rounded-xl bg-background/80 px-5 py-3">
               <Link2 className="h-5 w-5 shrink-0 text-primary" />

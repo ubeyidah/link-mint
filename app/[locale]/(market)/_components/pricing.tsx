@@ -59,14 +59,19 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <Wrapper as="section" id="pricing" className="pb-20 pt-10">
-      <h1 className="text-center py-4 text-3xl font-medium">
-        Plans and Pricing
-      </h1>
-      <p className="text-center pb-10 text-muted-foreground">
-        Choose the perfect plan for your needs. Start free and scale as you
-        grow.
-      </p>
+    <Wrapper as="section" id="pricing" className="py-24 md:py-32">
+      <div className="text-center mb-16">
+        <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
+          Pricing
+        </p>
+        <h2 className="font-sans text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+          Plans that grow with you
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          Choose the perfect plan for your needs. Start free and scale as you
+          grow.
+        </p>
+      </div>
       <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
         {plans.map((plan, index) => (
           <PricingCard.Card
