@@ -105,7 +105,7 @@ const SignInForm = () => {
         <div className="py-4">
           <div className="relative w-full block mb-6">
             <Separator />
-            <span className="absolute left-1/2 -translate-1/2 bg-card px-2">
+            <span className="absolute left-1/2 -translate-1/2 bg-background px-2 text-xs text-muted-foreground">
               Or
             </span>
           </div>
