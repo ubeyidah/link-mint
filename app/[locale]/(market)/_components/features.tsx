@@ -26,9 +26,9 @@ const Features = () => {
         </p>
 
         {/* Bento Grid */}
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:grid-rows-3">
           {/* Card 1 — Large: Free to Start (spans 2 cols) */}
-          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-8 text-left md:col-span-2 md:row-span-1 bg-transparent">
+          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 text-left sm:p-8 sm:col-span-2 md:col-span-2 md:row-span-1 bg-transparent">
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition-all group-hover:bg-primary/20" />
             <div className="relative z-10">
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
@@ -53,7 +53,7 @@ const Features = () => {
           </div>
 
           {/* Card 2 — Dashboard Overview */}
-          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-8 text-left md:row-span-2 bg-transparent">
+          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 text-left sm:p-8 md:row-span-2 bg-transparent">
             <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl transition-all group-hover:bg-primary/20" />
             <div className="relative z-10">
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
@@ -83,7 +83,7 @@ const Features = () => {
           </div>
 
           {/* Card 3 — Link Expiry */}
-          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-8 text-left bg-transparent">
+          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 text-left sm:p-8 bg-transparent">
             <div className="relative z-10">
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
                 <Clock className="h-6 w-6 text-primary" />
@@ -102,7 +102,7 @@ const Features = () => {
           </div>
 
           {/* Card 4 — Quick Link Creation */}
-          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-8 text-left bg-transparent">
+          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 text-left sm:p-8 bg-transparent">
             <div className="relative z-10">
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
                 <Zap className="h-6 w-6 text-primary" />
@@ -126,7 +126,7 @@ const Features = () => {
           </div>
 
           {/* Card 5 — Large: Multilingual Support (spans 2 cols) */}
-          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-8 text-left md:col-span-2 bg-transparent">
+          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 text-left sm:p-8 sm:col-span-2 md:col-span-2 bg-transparent">
             <div className="absolute -left-16 -bottom-16 h-44 w-44 rounded-full bg-primary/10 blur-3xl transition-all group-hover:bg-primary/20" />
             <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-sm">
@@ -156,7 +156,7 @@ const Features = () => {
           </div>
 
           {/* Card 6 — Modern UI */}
-          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-8 text-left bg-transparent">
+          <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 text-left sm:p-8 bg-transparent">
             <div className="relative z-10">
               <div className="mb-4 inline-flex rounded-xl border border-primary/20 bg-primary/10 p-3">
                 <BarChart3 className="h-6 w-6 text-primary" />

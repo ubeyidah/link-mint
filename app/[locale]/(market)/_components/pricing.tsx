@@ -72,7 +72,7 @@ const PricingSection = () => {
           grow.
         </p>
       </div>
-      <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:gap-4 md:grid-cols-3">
         {plans.map((plan, index) => (
           <PricingCard.Card
             className={cn(

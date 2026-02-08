@@ -84,12 +84,12 @@ const Hero = () => {
         {/* Floating mini-graphic: mock link shortener bar */}
         <div className="mt-20 w-full max-w-lg">
           <div className="rounded-2xl border border-border/40 bg-card/60 p-1 shadow-2xl shadow-primary/5 backdrop-blur-xl">
-            <div className="flex items-center gap-3 rounded-xl bg-background/80 px-5 py-3">
-              <Link2 className="h-5 w-5 shrink-0 text-primary" />
-              <span className="flex-1 truncate text-left text-sm text-muted-foreground">
-                https://example.com/my-very-long-url-to-shorten
+            <div className="flex items-center gap-2 rounded-xl bg-background/80 px-3 py-2.5 sm:gap-3 sm:px-5 sm:py-3">
+              <Link2 className="h-4 w-4 shrink-0 text-primary sm:h-5 sm:w-5" />
+              <span className="min-w-0 flex-1 truncate text-left text-xs text-muted-foreground sm:text-sm">
+                https://example.com/my-very-long-url
               </span>
-              <span className="shrink-0 rounded-lg bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground">
+              <span className="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground sm:px-4">
                 Shorten
               </span>
             </div>

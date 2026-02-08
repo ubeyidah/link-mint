@@ -5,7 +5,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       className={cn(
-        "relative w-full max-w-xs rounded-xl border bg-card dark:bg-transparent",
+        "relative w-full rounded-xl border bg-card dark:bg-transparent",
         "p-1.5 shadow-xs backdrop-blur-xl",
         className
       )}

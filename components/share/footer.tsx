@@ -32,9 +32,9 @@ const Footer = () => {
   return (
     <footer className="relative border-t border-border/50 bg-gradient-to-b from-transparent via-primary/[0.03] to-primary/[0.06]">
       <Wrapper className="py-12">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:gap-10 md:grid-cols-4">
           {/* Brand */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="col-span-2 space-y-4">
             <Link
               href="/"
               className="inline-flex items-center gap-2"
