@@ -24,10 +24,10 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith(route)
   );
 
-  if (isProtected && !sessionCookie) {
-    // Not authenticated → redirect to sign-in
-    return NextResponse.redirect(new URL("/sign-in", request.url));
-  }
+  // if (isProtected && !sessionCookie) {
+  //   // Not authenticated → redirect to sign-in
+  //   return NextResponse.redirect(new URL("/sign-in", request.url));
+  // }
 
   // ✅ If user is already logged in and tries to visit /sign-in or /sign-up
   const authPages = ["/sign-in", "/sign-up"];
