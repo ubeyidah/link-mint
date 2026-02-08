@@ -8,7 +8,7 @@ import UserProfile from "./user-profile";
 import { authClient } from "@/lib/auth-client";
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "features", href: "/#features" },
+  { name: "Features", href: "/#features" },
   { name: "Pricing", href: "/#pricing" },
 ];
 const Navbar = () => {
